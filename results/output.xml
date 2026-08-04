@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.6 on darwin)" generated="2026-08-04T21:53:12.540350" rpa="false" schemaversion="5">
+<suite id="s1" name="Checkout Test" source="/Users/genaro/Desktop/saucedemo-automation/tests/checkout_test.robot">
+<test id="s1-t1" name="User Can Complete End To End Purchase" line="11">
+<kw name="Open SauceDemo" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-08-04T21:53:12.640924" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-08-04T21:53:12.640814" elapsed="0.980924"/>
+</kw>
+<status status="PASS" start="2026-08-04T21:53:12.640510" elapsed="0.981734"/>
+</kw>
+<kw name="Login As" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:user-name</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-04T21:53:13.623035" elapsed="0.010339"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-04T21:53:13.633778" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>id:user-name</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-04T21:53:13.633472" elapsed="0.064871"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-04T21:53:13.698634" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-04T21:53:13.698463" elapsed="0.031938"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-08-04T21:53:13.730647" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-04T21:53:13.730520" elapsed="0.045293"/>
+</kw>
+<arg>standard_user</arg>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2026-08-04T21:53:13.622747" elapsed="0.153299"/>
+</kw>
+<kw name="Add Item To Cart" owner="inventory_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-04T21:53:13.776657" level="INFO">Clicking element 'css:[data-test="add-to-cart-sauce-labs-backpack"]'.</msg>
+<arg>${item_button_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-04T21:53:13.776516" elapsed="0.030698"/>
+</kw>
+<arg>css:[data-test="add-to-cart-sauce-labs-backpack"]</arg>
+<status status="PASS" start="2026-08-04T21:53:13.776288" elapsed="0.031010"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-08-04T21:53:13.807883" level="INFO">Clicking element 'css:.shopping_cart_link'.</msg>
+<arg>css:.shopping_cart_link</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-04T21:53:13.807430" elapsed="0.027696"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-08-04T21:53:13.835592" level="INFO">Clicking button 'id:checkout'.</msg>
+<arg>id:checkout</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-04T21:53:13.835384" elapsed="0.031906"/>
+</kw>
+<kw name="Fill Checkout Information" owner="checkout_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:first-name</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-04T21:53:13.867706" elapsed="0.007422"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-04T21:53:13.875360" level="INFO">Typing text 'Genaro' into text field 'id:first-name'.</msg>
+<arg>id:first-name</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-04T21:53:13.875217" elapsed="0.035437"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-04T21:53:13.910915" level="INFO">Typing text 'Tester' into text field 'id:last-name'.</msg>
+<arg>id:last-name</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-04T21:53:13.910765" elapsed="0.031079"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-04T21:53:13.942095" level="INFO">Typing text '12345' into text field 'id:postal-code'.</msg>
+<arg>id:postal-code</arg>
+<arg>${zip_code}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-04T21:53:13.941949" elapsed="0.031934"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-08-04T21:53:13.974113" level="INFO">Clicking button 'id:continue'.</msg>
+<arg>id:continue</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-04T21:53:13.973993" elapsed="0.037128"/>
+</kw>
+<arg>Genaro</arg>
+<arg>Tester</arg>
+<arg>12345</arg>
+<status status="PASS" start="2026-08-04T21:53:13.867506" elapsed="0.143689"/>
+</kw>
+<kw name="Complete Checkout" owner="checkout_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:finish</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-04T21:53:14.011776" elapsed="0.006767"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-08-04T21:53:14.018730" level="INFO">Clicking button 'id:finish'.</msg>
+<arg>id:finish</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-04T21:53:14.018626" elapsed="0.032221"/>
+</kw>
+<status status="PASS" start="2026-08-04T21:53:14.011429" elapsed="0.039492"/>
+</kw>
+<kw name="Get Order Confirmation Message" owner="checkout_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:.complete-header</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-04T21:53:14.051241" elapsed="0.006648"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-08-04T21:53:14.067393" level="INFO">${message} = Thank you for your order!</msg>
+<var>${message}</var>
+<arg>css:.complete-header</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-04T21:53:14.057977" elapsed="0.009440"/>
+</kw>
+<return>
+<value>${message}</value>
+<status status="PASS" start="2026-08-04T21:53:14.067465" elapsed="0.000058"/>
+</return>
+<msg time="2026-08-04T21:53:14.067612" level="INFO">${confirmation} = Thank you for your order!</msg>
+<var>${confirmation}</var>
+<status status="PASS" start="2026-08-04T21:53:14.051098" elapsed="0.016527"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${confirmation}</arg>
+<arg>Thank you for your order!</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-08-04T21:53:14.067733" elapsed="0.000250"/>
+</kw>
+<kw name="Close SauceDemo" owner="common" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-08-04T21:53:14.068242" elapsed="0.072797"/>
+</kw>
+<status status="PASS" start="2026-08-04T21:53:14.068136" elapsed="0.072973"/>
+</kw>
+<status status="PASS" start="2026-08-04T21:53:12.640177" elapsed="1.500989"/>
+</test>
+<status status="PASS" start="2026-08-04T21:53:12.540941" elapsed="1.600545"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Checkout Test" id="s1" pass="1" fail="0" skip="0">Checkout Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

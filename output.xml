@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.6 on darwin)" generated="2026-08-04T21:46:17.141781" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="/Users/genaro/Desktop/saucedemo-automation/tests">
+<suite id="s1-s1" name="Login Test" source="/Users/genaro/Desktop/saucedemo-automation/tests/login_test.robot">
+<test id="s1-s1-t1" name="Valid Login Shows Inventory Page" line="5">
+<kw name="Open SauceDemo" owner="common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-08-04T21:46:17.241721" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-08-04T21:46:17.241612" elapsed="1.385007"/>
+</kw>
+<status status="PASS" start="2026-08-04T21:46:17.241293" elapsed="1.385707"/>
+</kw>
+<kw name="Login As" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:user-name</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-04T21:46:18.627890" elapsed="0.010222"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-04T21:46:18.638363" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>id:user-name</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-04T21:46:18.638208" elapsed="0.065035"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-04T21:46:18.703529" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-04T21:46:18.703365" elapsed="0.031650"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-08-04T21:46:18.735256" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-04T21:46:18.735126" elapsed="0.045175"/>
+</kw>
+<arg>standard_user</arg>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2026-08-04T21:46:18.627505" elapsed="0.152879"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Products</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-08-04T21:46:18.780505" elapsed="0.005671"/>
+</kw>
+<kw name="Close SauceDemo" owner="common">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-08-04T21:46:18.786455" elapsed="0.074220"/>
+</kw>
+<status status="PASS" start="2026-08-04T21:46:18.786327" elapsed="0.074442"/>
+</kw>
+<status status="PASS" start="2026-08-04T21:46:17.240920" elapsed="1.619986"/>
+</test>
+<test id="s1-s1-t2" name="Invalid Password Shows Error Message" line="11">
+<kw name="Open SauceDemo" owner="common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-08-04T21:46:18.861639" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-08-04T21:46:18.861507" elapsed="0.836214"/>
+</kw>
+<status status="PASS" start="2026-08-04T21:46:18.861359" elapsed="0.836671"/>
+</kw>
+<kw name="Login As" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:user-name</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-08-04T21:46:19.698677" elapsed="0.013382"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-04T21:46:19.712301" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>id:user-name</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-04T21:46:19.712160" elapsed="0.083236"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-08-04T21:46:19.795728" level="INFO">Typing text 'wrong_password' into text field 'id:password'.</msg>
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-04T21:46:19.795548" elapsed="0.035223"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-08-04T21:46:19.831031" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-08-04T21:46:19.830889" elapsed="0.037497"/>
+</kw>
+<arg>standard_user</arg>
+<arg>wrong_password</arg>
+<status status="PASS" start="2026-08-04T21:46:19.698396" elapsed="0.170063"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>do not match</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-08-04T21:46:19.868577" elapsed="0.005453"/>
+</kw>
+<kw name="Close SauceDemo" owner="common">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-08-04T21:46:19.874290" elapsed="0.073154"/>
+</kw>
+<status status="PASS" start="2026-08-04T21:46:19.874166" elapsed="0.073360"/>
+</kw>
+<status status="PASS" start="2026-08-04T21:46:18.861120" elapsed="1.086543"/>
+</test>
+<status status="PASS" start="2026-08-04T21:46:17.156077" elapsed="2.791912"/>
+</suite>
+<status status="PASS" start="2026-08-04T21:46:17.142548" elapsed="2.805709"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="2" fail="0" skip="0">Tests</stat>
+<stat name="Login Test" id="s1-s1" pass="2" fail="0" skip="0">Tests.Login Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
