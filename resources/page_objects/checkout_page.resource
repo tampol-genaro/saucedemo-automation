@@ -20,13 +20,13 @@ Get Order Confirmation Message
     RETURN         ${message}
 
 Attempt Checkout With Missing First Name
-    [Argument]    ${last_name}    ${zip_code}
+    [Arguments]    ${last_name}    ${zip_code}
     Wait Until Element Is Visible    id:last-name
-    Input Test    id:last-name    ${last_name}
-    Input Test    id:postal-code    ${zip-code}
+    Input Text    id:last-name    ${last_name}
+    Input Text    id:postal-code    ${zip_code}
     Click Button    id:continue
 
 Get Checkout Error Message
     Wait Until Element Is Visible    css:[data-test="error"]    timeout=10s
-    ${error}=    Get Text    css:{data-test="error}
+    ${error}=    Get Text    css:[data-test="error"]
     RETURN    ${error}
