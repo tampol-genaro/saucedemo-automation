@@ -21,3 +21,22 @@ saucedemo-automation/
 ├── .gitignore
 └── README.md
 ```
+---
+
+## Setup
+
+1. Clone the repository: `git clone https://github.com/tampol-genaro/saucedemo-automation.git && cd saucedemo-automation`
+2. Create and activate a virtual environment: `python3 -m venv venv && source venv/bin/activate`
+3. Install dependencies: `pip install robotframework robotframework-seleniumlibrary`
+
+## Running the Tests
+
+Run all tests: `robot tests/`
+Run a specific file: `robot tests/login_test.robot` or `robot tests/checkout_test.robot`
+
+Test results (log, report, output) are generated automatically after each run.
+
+## Test Coverage
+
+- Login: valid credentials, invalid password (error handling)
+- Checkout: full purchase flow, missing required field (form validation)
